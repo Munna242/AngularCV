@@ -1,7 +1,5 @@
 version: 0.2
-env:
-  variables:
-    S3_BUCKET: "cv.schreck.berlin"
+
 phases:
   install:
     runtime-versions:
@@ -14,7 +12,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - ng build --prod --aot
+      - ng build 
   post_build:
      commands:
       - echo Build completed on `date`
@@ -22,4 +20,4 @@ artifacts:
   files:
       - '**/*'
   base-directory: 'dist*'
-  discard-paths: yes
+  
